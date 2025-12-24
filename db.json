@@ -1,0 +1,339 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "Admin 1",
+      "email": "admin@mail.com",
+      "password": "admin123",
+      "role": "admin",
+      "permission": [
+        "dashboard.page",
+        "mahasiswa.page",
+        "mahasiswa.read",
+        "mahasiswa.create",
+        "mahasiswa.update",
+        "mahasiswa.delete",
+        "rencana-studi.page",
+        "rencana-studi.read",
+        "rencana-studi.create",
+        "rencana-studi.update",
+        "rencana-studi.delete"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mahasiswa 1",
+      "email": "mahasiswa@mail.com",
+      "password": "mahasiswa123",
+      "role": "mahasiswa",
+      "permission": [
+        "krs.page",
+        "krs.read",
+        "rencana-studi.page",
+        "rencana-studi.read"
+      ]
+    }
+  ],
+  "dosen": [
+    {
+      "id": "1",
+      "name": "Jessie",
+      "max_sks": 12
+    },
+    {
+      "id": "2",
+      "name": "Walter",
+      "max_sks": 10
+    },
+    {
+      "id": "3",
+      "name": "Pablo",
+      "max_sks": 14
+    },
+    {
+      "id": "4",
+      "name": "Pacho",
+      "max_sks": 16
+    },
+    {
+      "id": "5",
+      "name": "Chapo",
+      "max_sks": 8
+    }
+  ],
+  "mahasiswa": [
+    {
+      "id": "1",
+      "nim": "M101",
+      "name": "Tara",
+      "max_sks": 18
+    },
+    {
+      "id": "2",
+      "name": "Roy",
+      "nim": "M102",
+      "max_sks": 20
+    },
+    {
+      "id": "3",
+      "name": "Fino",
+      "nim": "M103",
+      "max_sks": 22
+    },
+    {
+      "id": "4",
+      "name": "Dika",
+      "nim": "M104",
+      "max_sks": 18
+    },
+    {
+      "id": "5",
+      "name": "Fatka",
+      "nim": "M105",
+      "max_sks": 24
+    },
+    {
+      "id": "6",
+      "name": "Dila",
+      "nim": "M106",
+      "max_sks": 21
+    },
+    {
+      "id": "7",
+      "name": "Fajar",
+      "nim": "M107",
+      "max_sks": 20
+    },
+    {
+      "id": "8",
+      "name": "Hendra",
+      "nim": "M108",
+      "max_sks": 18
+    },
+    {
+      "id": "9",
+      "name": "Dobleh",
+      "nim": "M109",
+      "max_sks": 20
+    },
+    {
+      "id": "10",
+      "name": "Aan",
+      "nim": "M110",
+      "max_sks": 18
+    },
+    {
+      "id": "11",
+      "name": "Kaka",
+      "nim": "M111",
+      "max_sks": 24
+    },
+    {
+      "id": "12",
+      "name": "Bimbim",
+      "nim": "M112",
+      "max_sks": 20
+    },
+    {
+      "id": "13",
+      "name": "Joko",
+      "nim": "M113",
+      "max_sks": 18
+    },
+    {
+      "id": "14",
+      "name": "Ari",
+      "nim": "M114",
+      "max_sks": 22
+    },
+    {
+      "id": "15",
+      "name": "Jack",
+      "nim": "M115",
+      "max_sks": 20
+    },
+    {
+      "id": "16",
+      "name": "Putri",
+      "nim": "M116",
+      "max_sks": 18
+    },
+    {
+      "id": "17",
+      "name": "Nisa",
+      "nim": "M117",
+      "max_sks": 18
+    },
+    {
+      "id": "18",
+      "name": "Gus",
+      "nim": "M118",
+      "max_sks": 21
+    },
+    {
+      "id": "19",
+      "name": "Sasa",
+      "nim": "M119",
+      "max_sks": 18
+    },
+    {
+      "id": "20",
+      "name": "Tari",
+      "nim": "M120",
+      "max_sks": 18
+    }
+  ],
+  "mata_kuliah": [
+    {
+      "id": "1",
+      "name": "Pemrograman Sisi Client",
+      "sks": 3
+    },
+    {
+      "id": "2",
+      "name": "Logika Informatika",
+      "sks": 3
+    },
+    {
+      "id": "3",
+      "name": "Sistem Terdistribusi",
+      "sks": 2
+    }
+  ],
+  "kelas": [
+    {
+      "id": "1",
+      "mata_kuliah_id": 1,
+      "dosen_id": 3,
+      "mahasiswa_ids": [
+        1,
+        3,
+        10
+      ]
+    },
+    {
+      "id": "3",
+      "mata_kuliah_id": 2,
+      "dosen_id": 2,
+      "mahasiswa_ids": [
+        14,
+        13,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "4",
+      "mata_kuliah_id": 3,
+      "dosen_id": 1,
+      "mahasiswa_ids": [
+        12,
+        13,
+        1,
+        10,
+        2
+      ]
+    }
+  ],
+  "chart": {
+    "students": [
+      {
+        "id": 1,
+        "faculty": "Teknik",
+        "count": 300
+      },
+      {
+        "id": 2,
+        "faculty": "Ekonomi",
+        "count": 300
+      },
+      {
+        "id": 3,
+        "faculty": "Kedokteran",
+        "count": 300
+      },
+      {
+        "id": 4,
+        "faculty": "Hukum",
+        "count": 300
+      },
+      {
+        "id": 5,
+        "faculty": "Ilmu Komputer",
+        "count": 300
+      }
+    ],
+    "genderRatio": [
+      {
+        "id": 1,
+        "gender": "Laki-laki",
+        "count": 500
+      },
+      {
+        "id": 1,
+        "gender": "Perempuan",
+        "count": 600
+      }
+    ],
+    "registrations": [
+      {
+        "id": 1,
+        "year": 2020,
+        "total": 530
+      },
+      {
+        "id": 2,
+        "year": 2021,
+        "total": 550
+      },
+      {
+        "id": 3,
+        "year": 2022,
+        "total": 540
+      },
+      {
+        "id": 4,
+        "year": 2023,
+        "total": 610
+      }
+    ],
+    "gradeDistribution": [
+      {
+        "subject": "TI",
+        "A": 120,
+        "B": 80,
+        "C": 40
+      },
+      {
+        "subject": "SI",
+        "A": 100,
+        "B": 90,
+        "C": 50
+      },
+      {
+        "subject": "MI",
+        "A": 110,
+        "B": 85,
+        "C": 30
+      }
+    ],
+    "lecturerRanks": [
+      {
+        "rank": "Asisten Ahli",
+        "count": 20
+      },
+      {
+        "rank": "Lektor",
+        "count": 45
+      },
+      {
+        "rank": "Lektor Kepala",
+        "count": 30
+      },
+      {
+        "rank": "Guru Besar",
+        "count": 10
+      }
+    ]
+  }
+}
