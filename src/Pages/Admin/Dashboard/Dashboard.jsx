@@ -71,60 +71,31 @@ const Dashboard = () => {
       {/* Grid Layout Utama */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
         
-        {/* Trend Pendaftaran (Line Chart) */}
-        <ChartCard title="Trend Pendaftaran Mahasiswa" className="lg:col-span-8">
-          <LineChart data={registrations}>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
-            <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{fill: '#9ca3af'}} dy={10} />
-            <YAxis axisLine={false} tickLine={false} tick={{fill: '#9ca3af'}} />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend verticalAlign="top" height={36} />
-            <Line 
-              type="monotone" 
-              dataKey="total" 
-              name="Jumlah Pendaftar"
-              stroke="#6366f1" 
-              strokeWidth={3}
-              dot={{ r: 4, fill: "#6366f1", strokeWidth: 2, stroke: "#fff" }}
-              activeDot={{ r: 6 }} 
-            />
+    {/* Trend Pendaftaran Mahasiswa */}
+      <ChartCard title="Trend Pendaftaran Mahasiswa" className="lg:col-span-8">
+        <LineChart data={registrations}>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
+            <XAxis
+              dataKey="year"
+              axisLine={false}
+              tickLine={false}
+              tick={{ fill: "#9ca3af" }}
+              dy={10} />
+            <YAxis axisLine={false} tickLine={false} tick={{ fill: "#9ca3af" }} />
+              <Tooltip content={<CustomTooltip />} />
+                <Legend verticalAlign="top" height={36} />
+          <Line
+            type="monotone"
+            dataKey="total"
+            name="Jumlah Pendaftar"
+            stroke="#6366f1"
+            strokeWidth={3}
+            dot={{ r: 4, fill: "#6366f1", strokeWidth: 2, stroke: "#fff" }}
+            activeDot={{ r: 6 }}/>
           </LineChart>
         </ChartCard>
 
-        {/* Rasio Gender (Pie Chart) */}
-        <ChartCard title="Rasio Gender" className="lg:col-span-4">
-          <PieChart>
-            <Pie
-              data={genderRatio}
-              dataKey="count"
-              nameKey="gender"
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={80}
-              paddingAngle={5}
-            >
-              {genderRatio.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-            <Legend verticalAlign="bottom" height={36} iconType="circle" />
-          </PieChart>
-        </ChartCard>
-
-        {/* Mahasiswa per Fakultas (Bar Chart) */}
-        <ChartCard title="Mahasiswa per Fakultas" className="lg:col-span-6">
-          <BarChart data={students} barSize={40}>
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
-            <XAxis dataKey="faculty" axisLine={false} tickLine={false} tick={{fill: '#9ca3af', fontSize: 12}} dy={10} />
-            <YAxis axisLine={false} tickLine={false} tick={{fill: '#9ca3af'}} />
-            <Tooltip content={<CustomTooltip />} cursor={{fill: 'transparent'}} />
-            <Bar dataKey="count" name="Jumlah Mahasiswa" fill="#10b981" radius={[6, 6, 0, 0]} />
-          </BarChart>
-        </ChartCard>
-
-        {/* Distribusi Nilai (Radar Chart) */}
+     {/* Distribusi Nilai (Radar Chart) */}
         <ChartCard title="Distribusi Nilai Jurusan" className="lg:col-span-3">
           <RadarChart cx="50%" cy="50%" outerRadius="70%" data={gradeDistribution}>
             <PolarGrid stroke="#e5e7eb" />
@@ -137,31 +108,15 @@ const Dashboard = () => {
           </RadarChart>
         </ChartCard>
 
-        {/* Pangkat Dosen (Area Chart) */}
-        <ChartCard title="Kepangkatan Dosen" className="lg:col-span-3">
-          <AreaChart data={lecturerRanks}>
-            <defs>
-              <linearGradient id="colorLecturer" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#ef4444" stopOpacity={0.8}/>
-                <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
-              </linearGradient>
-            </defs>
-            <XAxis dataKey="rank" hide />
-            <YAxis hide />
+        {/* Mahasiswa per Fakultas (Bar Chart) */}
+        <ChartCard title="Mahasiswa per Fakultas" className="lg:col-span-6">
+          <BarChart data={students} barSize={40}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
-            <Tooltip content={<CustomTooltip />} />
-            <Area 
-                type="monotone" 
-                dataKey="count" 
-                name="Jumlah Dosen"
-                stroke="#ef4444" 
-                fillOpacity={1} 
-                fill="url(#colorLecturer)" 
-            />
-            <p className="text-center mt-2 text-xs text-gray-500">
-                Distribusi berdasarkan jabatan fungsional
-            </p>
-          </AreaChart>
+            <XAxis dataKey="faculty" axisLine={false} tickLine={false} tick={{fill: '#9ca3af', fontSize: 12}} dy={10} />
+            <YAxis axisLine={false} tickLine={false} tick={{fill: '#9ca3af'}} />
+            <Tooltip content={<CustomTooltip />} cursor={{fill: 'transparent'}} />
+            <Bar dataKey="count" name="Jumlah Mahasiswa" fill="#10b981" radius={[6, 6, 0, 0]} />
+          </BarChart>
         </ChartCard>
 
       </div>
